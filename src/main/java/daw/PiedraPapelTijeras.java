@@ -254,7 +254,7 @@ public class PiedraPapelTijeras {
                                         || !(elegirPPTJ1.equalsIgnoreCase("piedra")
                                         || elegirPPTJ1.equalsIgnoreCase("papel")
                                         || elegirPPTJ1.equalsIgnoreCase("tijeras")));
-                                eligeMaquinaPPT = random.nextInt(1, 3);
+                                eligeMaquinaPPT = random.nextInt(1, 4);
                                 switch (eligeMaquinaPPT) {
                                     case 1 -> {
                                         maquinaPNJ = "piedra";
@@ -287,7 +287,7 @@ public class PiedraPapelTijeras {
                                         && maquinaPNJ.equalsIgnoreCase("papel"))
                                         || (elegirPPTJ1.equalsIgnoreCase("papel")
                                         && maquinaPNJ.equalsIgnoreCase("piedra"))) {
-                                    System.out.println("Gana " + jugador1);
+                                    System.out.println("Gana " + jugador1); 
                                     puntosJ1 += 1;
                                 } else {
                                     System.out.println("Gana la máquina");
@@ -325,7 +325,7 @@ public class PiedraPapelTijeras {
                                     + "introducir los datos por 'Scanner'");
                             for (int i = 0; i < 5; i++) {
                                 System.out.println((i + 1) + "/5");
-                                eligeMaquinaPPT = random.nextInt(1, 3);
+                                eligeMaquinaPPT = random.nextInt(1, 4);
                                 switch (eligeMaquinaPPT) {
                                     case 1 -> {
                                         maquinaPNJ = "piedra";
@@ -374,10 +374,10 @@ public class PiedraPapelTijeras {
                                         || (elegirPPTJ1.equalsIgnoreCase("papel")
                                         && maquinaPNJ.equalsIgnoreCase("piedra"))) {
                                     System.out.println("Gana " + jugador1);
-                                    puntosMaq += 1;
+                                    puntosJ1 += 1;
                                 } else {
                                     System.out.println("Gana la máquina");
-                                    puntosJ1 += 1;
+                                    puntosMaq += 1;
                                 }
                                 if (puntosJ1 == 3) {
                                     System.out.println(jugador1 + " ha llegado antes "
