@@ -101,6 +101,7 @@ public class PiedraPapelTijeras {
                                         || (elegirPPTJ1.equalsIgnoreCase("piedra")
                                         && elegirPPTJ2.equalsIgnoreCase("piedra"))) {
                                     System.out.println("Empate");
+                                    i--;//Cuando se queda empate
                                 } else if ((elegirPPTJ1.equalsIgnoreCase("piedra")
                                         && elegirPPTJ2.equalsIgnoreCase("tijeras"))
                                         || (elegirPPTJ1.equalsIgnoreCase("tijeras")
@@ -149,21 +150,6 @@ public class PiedraPapelTijeras {
                                     try {
                                         System.out.println(jugador2
                                                 + " elige piedra, papel o tijeras: ");
-                                        elegirPPTJ1 = teclado.nextLine();
-                                        repetirPPT = false;
-                                    } catch (InputMismatchException ime) {
-                                        System.out.println("Tienes que elegir un dato "
-                                                + "correcto (piedra, papel o tijeras)");
-                                        teclado.nextLine();
-                                    }
-                                } while (repetirPPT
-                                        || !(elegirPPTJ1.equalsIgnoreCase("piedra")
-                                        || elegirPPTJ1.equalsIgnoreCase("papel")
-                                        || elegirPPTJ1.equalsIgnoreCase("tijeras")));
-                                do {
-                                    try {
-                                        System.out.println(jugador1
-                                                + " elige piedra, papel o tijeras: ");
                                         elegirPPTJ2 = teclado.nextLine();
                                         repetirPPT = false;
                                     } catch (InputMismatchException ime) {
@@ -175,6 +161,21 @@ public class PiedraPapelTijeras {
                                         || !(elegirPPTJ2.equalsIgnoreCase("piedra")
                                         || elegirPPTJ2.equalsIgnoreCase("papel")
                                         || elegirPPTJ2.equalsIgnoreCase("tijeras")));
+                                do {
+                                    try {
+                                        System.out.println(jugador1
+                                                + " elige piedra, papel o tijeras: ");
+                                        elegirPPTJ1 = teclado.nextLine();
+                                        repetirPPT = false;
+                                    } catch (InputMismatchException ime) {
+                                        System.out.println("Tienes que elegir un dato "
+                                                + "correcto (piedra, papel o tijeras)");
+                                        teclado.nextLine();
+                                    }
+                                } while (repetirPPT
+                                        || !(elegirPPTJ1.equalsIgnoreCase("piedra")
+                                        || elegirPPTJ1.equalsIgnoreCase("papel")
+                                        || elegirPPTJ1.equalsIgnoreCase("tijeras")));
 
                                 if ((elegirPPTJ1.equalsIgnoreCase("papel")//En el caso de que se quede empate
                                         && elegirPPTJ2.equalsIgnoreCase("papel"))
@@ -183,17 +184,15 @@ public class PiedraPapelTijeras {
                                         || (elegirPPTJ1.equalsIgnoreCase("piedra")
                                         && elegirPPTJ2.equalsIgnoreCase("piedra"))) {
                                     System.out.println("Empate");
-                                } else if ((elegirPPTJ2.equalsIgnoreCase("piedra")
-                                        && elegirPPTJ1.equalsIgnoreCase("tijeras"))
-                                        || (elegirPPTJ2.equalsIgnoreCase("tijeras")
-                                        && elegirPPTJ1.equalsIgnoreCase("papel"))
-                                        || (elegirPPTJ2.equalsIgnoreCase("papel")
-                                        && elegirPPTJ1.equalsIgnoreCase("piedra"))) {
-                                    System.out.println("Gana " + jugador2);
-                                    puntosJ2 += 1;
-                                } else {
+                                    i--;
+                                } else if ((elegirPPTJ1.equalsIgnoreCase("piedra") && elegirPPTJ2.equalsIgnoreCase("tijeras"))
+                                        || (elegirPPTJ1.equalsIgnoreCase("tijeras") && elegirPPTJ2.equalsIgnoreCase("papel"))
+                                        || (elegirPPTJ1.equalsIgnoreCase("papel") && elegirPPTJ2.equalsIgnoreCase("piedra"))) {
                                     System.out.println("Gana " + jugador1);
                                     puntosJ1 += 1;
+                                } else {
+                                    System.out.println("Gana " + jugador2);
+                                    puntosJ2 += 1;
                                 }
 
                                 if (puntosJ2 == 3) {
@@ -281,6 +280,7 @@ public class PiedraPapelTijeras {
                                         || (elegirPPTJ1.equalsIgnoreCase("piedra")
                                         && maquinaPNJ.equalsIgnoreCase("piedra"))) {
                                     System.out.println("Empate");
+                                    i--;
                                 } else if ((elegirPPTJ1.equalsIgnoreCase("piedra")
                                         && maquinaPNJ.equalsIgnoreCase("tijeras"))
                                         || (elegirPPTJ1.equalsIgnoreCase("tijeras")
@@ -366,6 +366,7 @@ public class PiedraPapelTijeras {
                                         || (elegirPPTJ1.equalsIgnoreCase("piedra")
                                         && maquinaPNJ.equalsIgnoreCase("piedra"))) {
                                     System.out.println("Empate");
+                                    i--;
                                 } else if ((elegirPPTJ1.equalsIgnoreCase("piedra")
                                         && maquinaPNJ.equalsIgnoreCase("tijeras"))
                                         || (elegirPPTJ1.equalsIgnoreCase("tijeras")
