@@ -19,7 +19,7 @@ public class PiedraPapelTijeras {
         Scanner teclado = new Scanner(System.in);
         int mostrarMenu = 0, numeroRandom, puntosJ1 = 0, puntosJ2 = 0,
                 eligeMaquinaPPT = 0, puntosMaq = 0;
-        boolean menuRepetir = true, repetirPPT = true, repetirPrograma = (mostrarMenu == 3);
+        boolean menuRepetir = true, repetirPPT = true;
         String menu = """
                     ----------------------------------------------  
                       1.- Juego de dos jugadores
@@ -113,13 +113,16 @@ public class PiedraPapelTijeras {
                                     System.out.println("Gana " + jugador2);
                                     puntosJ2 += 1;
                                 }
-//                                if (puntosJ1 == 3) {
-//                                    System.out.println(jugador1 + " ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                } else {
-//                                    System.out.println(jugador2 + " ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                }
+                                if (puntosJ1 == 3) {
+                                    System.out.println(jugador1 + " ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
+                                if (puntosJ2 == 3) {
+                                    System.out.println(jugador2 + " ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
                                 System.out.println("-------------------------------");
                                 System.out.println(jugador1 + " tiene " + puntosJ1 + " puntos");
                                 System.out.println(jugador2 + " tiene " + puntosJ2 + " puntos");
@@ -127,9 +130,12 @@ public class PiedraPapelTijeras {
                             if (puntosJ1 > puntosJ2) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado " + jugador1);
-                            } else {
+                            } else if (puntosJ2 > puntosJ1) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado " + jugador2);
+                            } else if (puntosJ1 == puntosJ2) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Empate, no ganan nadie");
                             }
                         }
 
@@ -189,13 +195,19 @@ public class PiedraPapelTijeras {
                                     System.out.println("Gana " + jugador2);
                                     puntosJ1 += 1;
                                 }
-//                                if (puntosJ1 == 3) {
-//                                    System.out.println(jugador1 + " ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                } else {
-//                                    System.out.println(jugador2 + " ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                }
+
+                                if (puntosJ2 == 3) {
+                                    System.out.println(jugador2 + " ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
+
+                                if (puntosJ1 == 3) {
+                                    System.out.println(jugador1 + " ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
+
                                 System.out.println("-------------------------------");
                                 System.out.println(jugador2 + " tiene " + puntosJ2 + " puntos");
                                 System.out.println(jugador1 + " tiene " + puntosJ1 + " puntos");
@@ -203,9 +215,12 @@ public class PiedraPapelTijeras {
                             if (puntosJ1 > puntosJ2) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado " + jugador1);
-                            } else {
+                            } else if (puntosJ2 > puntosJ1) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado " + jugador2);
+                            } else if (puntosJ1 == puntosJ2) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Empate, no ganan nadie");
                             }
                         }
                     }
@@ -228,7 +243,7 @@ public class PiedraPapelTijeras {
                                 do {
                                     try {
                                         System.out.println(jugador1
-                                                + " elige piedra, papel o tijeras");
+                                                + " elige piedra, papel o tijeras:");
                                         elegirPPTJ1 = teclado.nextLine();
                                         repetirPPT = false;
                                     } catch (InputMismatchException ime) {
@@ -278,13 +293,17 @@ public class PiedraPapelTijeras {
                                     System.out.println("Gana la máquina");
                                     puntosMaq += 1;
                                 }
-//                                if (puntosJ1 == 3) {
-//                                    System.out.println(jugador1 + " ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                } else {
-//                                    System.out.println("La máquina ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                }
+                                if (puntosJ1 == 3) {
+                                    System.out.println(jugador1 + " ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
+                                if (puntosMaq == 3) {
+                                    System.out.println("La máquina ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
+
                                 System.out.println("-------------------------------");
                                 System.out.println(jugador1 + " tiene " + puntosJ1 + " puntos");
                                 System.out.println("La máquina tiene " + puntosMaq + " puntos");
@@ -292,9 +311,12 @@ public class PiedraPapelTijeras {
                             if (puntosJ1 > puntosMaq) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado " + jugador1);
-                            } else {
+                            } else if (puntosMaq > puntosJ1) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado la máquina");
+                            } else if (puntosJ1 == puntosMaq) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Empate, no ganan nadie");
                             }
                         }
                         case 2 -> {
@@ -324,7 +346,7 @@ public class PiedraPapelTijeras {
                                 do {
                                     try {
                                         System.out.println(jugador1
-                                                + " elige piedra, papel o tijeras");
+                                                + " elige piedra, papel o tijeras:");
                                         elegirPPTJ1 = teclado.nextLine();
                                         repetirPPT = false;
                                     } catch (InputMismatchException ime) {
@@ -356,32 +378,35 @@ public class PiedraPapelTijeras {
                                     System.out.println("Gana la máquina");
                                     puntosJ1 += 1;
                                 }
-//                                if (puntosJ1 == 3) {
-//                                    System.out.println(jugador1 + " ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                } else {
-//                                    System.out.println("La máquina ha llegado antes "
-//                                            + "ha 3 puntos");
-//                                }
+                                if (puntosJ1 == 3) {
+                                    System.out.println(jugador1 + " ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
+                                if (puntosMaq == 3) {
+                                    System.out.println("La máquina ha llegado antes "
+                                            + "ha 3 puntos");
+                                    break;
+                                }
+
                                 System.out.println("-------------------------------");
-                                System.out.println(jugador1 + " tiene " + puntosJ1 + " puntos");
                                 System.out.println("La máquina tiene " + puntosMaq + " puntos");
+                                System.out.println(jugador1 + " tiene " + puntosJ1 + " puntos");
                             }
                             if (puntosJ1 > puntosMaq) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado " + jugador1);
-                            } else {
+                            } else if (puntosMaq > puntosJ1) {
                                 JOptionPane.showMessageDialog(null,
                                         "Ha ganado la máquina");
+                            } else if (puntosJ1 == puntosMaq) {
+                                JOptionPane.showMessageDialog(null,
+                                        "Empate, no ganan nadie");
                             }
                         }
                     }
                 }
-                case 3 -> {
-                    JOptionPane.showMessageDialog(null,
-                            "Has elegido terminar el programa");
-                }
             }
-        } while (repetirPrograma);
+        } while (menuRepetir || !(mostrarMenu == 3));
     }
 }
