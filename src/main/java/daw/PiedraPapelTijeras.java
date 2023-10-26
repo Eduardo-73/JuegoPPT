@@ -189,10 +189,10 @@ public class PiedraPapelTijeras {
                                         && elegirPPTJ1.equalsIgnoreCase("papel"))
                                         || (elegirPPTJ2.equalsIgnoreCase("papel")
                                         && elegirPPTJ1.equalsIgnoreCase("piedra"))) {
-                                    System.out.println("Gana " + jugador1);
+                                    System.out.println("Gana " + jugador2);
                                     puntosJ2 += 1;
                                 } else {
-                                    System.out.println("Gana " + jugador2);
+                                    System.out.println("Gana " + jugador1);
                                     puntosJ1 += 1;
                                 }
 
